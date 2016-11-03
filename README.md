@@ -1,2 +1,2 @@
 # automation_scripts
-Linux Automation Script
+Linux Automation Scripts
