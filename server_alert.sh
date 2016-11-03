@@ -3,7 +3,7 @@
 var=$(cat /proc/uptime | cut -d " " -f1)
 users=$(/usr/bin/who | grep -c "")
 
-if [ "$var" > "720" ]; then
+if [ "$var" > "7200" ]; then
     echo "Server `hostname` has been up for more than 2 hours!"
     echo "Number of users logged on: $users"
 fi
