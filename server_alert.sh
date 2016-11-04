@@ -16,7 +16,7 @@ fi
 
 ##Crontab entry to run script every 30 minutes:
 
-*/30 * * * * /home/ec2-user/server_alert3.sh | mail -s "Server Alert" wadejs@icloud.com
+0,30 * * * * /home/ec2-user/server_alert3.sh | mail -s "Server Alert" wadejs@icloud.com
 
 ##Output to email wadejs@icloud.com:
 
