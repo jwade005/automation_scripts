@@ -3,7 +3,7 @@
 timer=$(cat /proc/uptime | cut -d " " -f1)
 users=$(/usr/bin/who | grep -c "")
 
-if [ "$timer" > "7200" ]; then
+if [ "$timer" -gt "7200" ]; then
     echo "Server `hostname` Server ALERT!"
     echo "Number of users logged on: $users"
     echo -e "Server Alert: `hostname`:\n `uptime -p` \n USERS: `who` "
