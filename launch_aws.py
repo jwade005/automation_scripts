@@ -29,7 +29,7 @@ def launch_instance():
       UserData="""#!/usr/bin/python
       # This Python file uses the following encoding: utf-8
 
-import os, sys
+import os, sys, subprocess
 
 def my_github():
     print('Installing git.')
