@@ -8,9 +8,9 @@ import pprint
 ec2 = boto3.resource('ec2')
 client = boto3.client('ec2')
 
-amazon_image = 'ami-2051294a'
+amazon_image = 'ami-6f68cf0f'
 amazon_instance = 't2.micro'
-amazon_pem_key = 'RedHat7-1.pem'
+amazon_pem_key = 'RedHat7-1'
 firewall_profile = ['launch-wizard-1']
 
 print(amazon_image)
@@ -26,9 +26,7 @@ def launch_instance():
       MaxCount=1,
       KeyName = amazon_pem_key,
       SecurityGroupIds = firewall_profile,
-      UserData="""
-
-      #!/usr/bin/python
+      UserData="""#!/usr/bin/python
       # This Python file uses the following encoding: utf-8
 
       import os, sys
@@ -43,18 +41,23 @@ def launch_instance():
 
       sys.path.append('/home')
 
-      import install_script
+      import install_scripts
 
-      install_script.install_apache()
-      install_script.clone_github()
-      install_script.publish_website()
-      install_script.tree_install()
-      install_script.django_install()
-      install_script.mysite()
-      install_script.mailx()
-      install_script.crontab()
-      install_script.dirty_cow()
+      install_scripts.install_apache()
+      install_scripts.clone_github()
+      install_scripts.publish_website()
+      install_scripts.tree_install()
+      install_scripts.django_install()
+      install_scripts.mysite()
+      install_scripts.mailx()
+      install_scripts.crontab()
+      install_scripts.dirty_cow()
 
-"""
+      """
 
     )
+
+   pprint.pprint(instances)
+
+
+launch_instance()
