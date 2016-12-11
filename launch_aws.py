@@ -29,31 +29,31 @@ def launch_instance():
       UserData="""#!/usr/bin/python
       # This Python file uses the following encoding: utf-8
 
-      import os, sys
-      def my_github():
-         print('Installing git.')
-         os.system('sudo yum -y install git')
+import os, sys
 
-         print('Installing jwade005s GitHub.')
-         os.system('git clone https://github.com/jwade005/install_scripts.git /home')
+def my_github():
+    print('Installing git.')
+    os.system('yum -y install git')
 
-      my_github()
+    print('Installing jwade005s GitHub.')
+    os.system('git clone https://github.com/jwade005/install_scripts.git /python_deployment')
 
-      sys.path.append('/home')
+my_github()
 
-      import install_scripts
+sys.path.append('/python_deployment')
 
-      install_scripts.install_apache()
-      install_scripts.clone_github()
-      install_scripts.publish_website()
-      install_scripts.tree_install()
-      install_scripts.django_install()
-      install_scripts.mysite()
-      install_scripts.mailx()
-      install_scripts.crontab()
-      install_scripts.dirty_cow()
+import install_script
 
-      """
+install_script.install_apache()
+install_script.publish_website()
+install_script.tree_install()
+install_script.django_install()
+install_script.mysite()
+install_script.mailx()
+install_script.crontab()
+install_script.dirty_cow()
+
+"""
 
     )
 
