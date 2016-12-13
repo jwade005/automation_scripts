@@ -44,19 +44,10 @@ sys.path.append('/python_deployment')
 
 import install_script
 
-install_script.install_apache()
-install_script.publish_website()
-install_script.tree_install()
-install_script.django_install()
-install_script.mysite()
-install_script.mailx()
-install_script.crontab()
-install_script.dirty_cow()
-
 def start_django():
    print('Starting the Django Web Server')
    os.system('python /opt/django/mysite/mysite/manage.py runserver 0.0.0.0:8000')
-   
+
 start_django()
 
 """
