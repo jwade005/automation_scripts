@@ -46,7 +46,7 @@ import install_script
 
 def start_django():
    print('Starting the Django Web Server')
-   os.system('source /opt/django/django-env/bin/python2/activate')
+   os.system('source /opt/django/django-env/bin/activate')
    os.system('source /opt/django/django-env/bin/python2/python /opt/django/mysite/mysite/manage.py runserver 0.0.0.0:8000&')
 
 start_django()
